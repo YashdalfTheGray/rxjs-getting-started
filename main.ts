@@ -1,20 +1,23 @@
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/fromEvent";
+import "rxjs/add/observable/fromPromise";
+import "rxjs/add/operator/mergeMap";
 import "rxjs/add/operator/map";
-import "rxjs/add/operator/filter";
-import "rxjs/add/operator/delay";
 
-const circle = <HTMLElement>document.querySelector('#circle');
+interface Movie {
+    title: string
+}
 
-const source = Observable.fromEvent(document, 'mousemove')
-.map((e: MouseEvent) => [e.clientX, e.clientY])
-.filter(v => v[0] < 500)
-.delay(250);
+const output = <HTMLElement>document.querySelector('#output');
+const button = <HTMLElement>document.querySelector('#button');
 
-const onNext = (value) => [circle.style.left, circle.style.top] = value.map(v => v + 'px');
+const source = Observable.fromEvent(button, 'click');
+const load = (url: string) => Observable.fromPromise(fetch(url).then(r => r.json<Array<Movie>>()));
 
-source.subscribe(
-    onNext,
+source.flatMap(e => load('movies.json'))
+.map(movies => movies.map(m => `<div>${m.title}</div>`).join(''))
+.subscribe(
+    ms => output.innerHTML = ms,
     e => console.log(`Got error: ${e}`),
     () => console.log('No more stuff left')
 );
