@@ -18,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/yashdalfthegray/rxjs-getting-started/issues"
   },
-  "homepage": "https://github.com/yashdalfthegray/rxjs-getting-started#readme"
+  "homepage": "https://github.com/yashdalfthegray/rxjs-getting-started#readme",
+  "dependencies": {
+    "rxjs": "^5.1.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.6",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  }
 }
