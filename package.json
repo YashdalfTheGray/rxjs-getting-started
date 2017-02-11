@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/yashdalfthegray/rxjs-getting-started#readme",
   "dependencies": {
+    "@types/es6-shim": "^0.31.32",
     "rxjs": "^5.1.0"
   },
   "devDependencies": {
