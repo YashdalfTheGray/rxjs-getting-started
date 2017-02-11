@@ -15,3 +15,4 @@ As an aside, you can also check the [ECMAScript 6 Compatibility chart](https://k
 
 * `simple-observer` - First encounter with Observable and observers.
 * `circle-demo` - Using the `mousemove` event to make a circle follow the mouse cursor.
+* `fetch-movies` - using the `fetch` API to get some JSON with error handling and retry logic.
