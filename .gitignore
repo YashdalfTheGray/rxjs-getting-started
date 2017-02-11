@@ -1,3 +1,7 @@
+# typescript
+*.js
+*.js.map
+!webpack.*
 
 # Created by https://www.gitignore.io/api/node,windows,osx
 
