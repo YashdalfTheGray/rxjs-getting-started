@@ -1,4 +1,3 @@
-//import { Observable, Observer } from "rxjs";
 import { Observable } from "rxjs/Observable";
 import { Observer } from "rxjs/Observer";
 import "rxjs/add/operator/map";
